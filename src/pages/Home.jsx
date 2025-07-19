@@ -363,34 +363,6 @@ function Home() {
           </motion.div>
         </div>
       </section>
-      <section className="bg-[url('assets/images/clock.jpg')] bg-cover bg-center">
-        <div className="bg-blue-800/30 py-20">
-          <motion.div
-            className="mx-auto max-w-4xl flex flex-col items-center justify-center text-white text-center px-4"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={heroContentVariants}
-          >
-            <motion.p
-              className="text-lg md:text-3xl mb-10 leading-relaxed"
-              variants={heroItemVariants}
-            >
-              “ We help hardware start-ups integrate technology, scale and
-              desirability without compromise ”
-            </motion.p>
-            <motion.button
-              className="px-6 py-2 bg-white rounded-lg text-black font-semibold shadow-xl"
-              variants={heroItemVariants}
-              whileHover={{ scale: 1.05, backgroundColor: "#E0E0E0" }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              Get a Quote
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
     </>
   );
 }
