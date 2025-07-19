@@ -1,0 +1,47 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.class
+*.jar
+*.war
+*.ear
+target/
+build/
+bin/
+dist/
+out/
+
+# Log files
+*.log
+logs/
+
+# Dependency directories
+node_modules/
+vendor/
+env/
+venv/
+.venv/
+
+# IDE specific files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+*.swp
+*.bak
+*.swo
+
+# Temporary files and caches
+*.tmp
+*.temp
+temp/
+tmp/
+.cache/
+__pycache__/
+
+# Environment variables
+.env
+.env.*
