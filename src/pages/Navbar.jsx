@@ -30,14 +30,14 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <a href="/about" class="hover:text-gray-900">
+            <Link to="/product" class="hover:text-gray-900">
               Product
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" class="hover:text-gray-900">
+            <Link to="/services" class="hover:text-gray-900">
               Services
-            </a>
+            </Link>
           </li>
           <li>
             <a href="#" class="hover:text-gray-900">

@@ -4,55 +4,18 @@ import oilExplorationImg from "../assets/images/oil-exploration.jpg";
 import oilProductionImg from "../assets/images/oil-production.jpg";
 import oilRefiningImg from "../assets/images/oil-refining.png";
 import oilTerminalImg from "../assets/images/oil-terminal.jpg";
+import {
+  fadeInAnimationVariants,
+  fadeInFromLeft,
+  fadeInFromRight,
+  heroContentVariants,
+  heroItemVariants,
+} from "../animations";
 // import clockImg from "../assets/images/clock.jpg"; // Keeping for completeness if it were used in an <img>, but it's in a Tailwind class.
 import { motion } from "framer-motion";
 import { useRef } from "react"; // Only need useRef if useInView is used directly on elements without `whileInView`
 
 // Animation variants for reusability
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (index) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7, // Made duration uniform for smoother appearance
-      ease: "easeOut", // Added ease for smoother animation
-      delay: 0.05 * index,
-    },
-  }),
-};
-
-const fadeInFromLeft = {
-  hidden: { opacity: 0, x: -100 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } }, // Made duration and ease uniform
-};
-
-const fadeInFromRight = {
-  hidden: { opacity: 0, x: 100 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } }, // Made duration and ease uniform
-};
-
-const heroContentVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8, // Slightly longer duration for hero for a grander feel
-      ease: "easeOut",
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const heroItemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
-};
-
 function Home() {
   return (
     <>
@@ -380,6 +343,34 @@ function Home() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             variants={heroContentVariants} // Reusing for consistency
+          >
+            <motion.p
+              className="text-lg md:text-3xl mb-10 leading-relaxed"
+              variants={heroItemVariants}
+            >
+              “ We help hardware start-ups integrate technology, scale and
+              desirability without compromise ”
+            </motion.p>
+            <motion.button
+              className="px-6 py-2 bg-white rounded-lg text-black font-semibold shadow-xl"
+              variants={heroItemVariants}
+              whileHover={{ scale: 1.05, backgroundColor: "#E0E0E0" }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              Get a Quote
+            </motion.button>
+          </motion.div>
+        </div>
+      </section>
+      <section className="bg-[url('assets/images/clock.jpg')] bg-cover bg-center">
+        <div className="bg-blue-800/30 py-20">
+          <motion.div
+            className="mx-auto max-w-4xl flex flex-col items-center justify-center text-white text-center px-4"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={heroContentVariants}
           >
             <motion.p
               className="text-lg md:text-3xl mb-10 leading-relaxed"
