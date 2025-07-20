@@ -57,13 +57,13 @@ const About = () => {
           </div>
         </motion.a>
       </section>
-      <section className="flex flex-col text-blue-900 md:flex-row items-center gap-4 my-10 mx-4 md:m-20 justify-center py-10 md:py-20 px-4">
+      <section className="flex flex-col text-blue-900  min-[800px]:flex-row items-center gap-4 my-10 mx-4 min-[800px]:m-20 justify-center py-10 min-[800px]:py-20 px-4">
         <motion.div
-          className="w-full md:w-3/5 p-4 flex justify-center"
+          className="w-full min-[800px]:w-3/5 p-4 flex justify-center"
           variants={heroItemVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
         >
           <img
             src={aboutPetroleum} // Placeholder image path
@@ -72,11 +72,11 @@ const About = () => {
           />
         </motion.div>
         <motion.div
-          className="w-full md:w-1/2 lg:w-3/5 p-4 text-left flex flex-col justify-between"
+          className="w-full min-[800px]:w-1/2 lg:w-3/5 p-4 text-left flex flex-col justify-between"
           variants={fadeInFromRight}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
         >
           <p className="text-base md:text-lg mb-4 leading-loose">
             The production of petroleum products that comply with regulatory
