@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import productHero from "../assets/images/oil-refining.webp";
+import productHero from "../assets/images/oil-refining.png";
 import { heroItemVariants } from "../animations"; // Reusing animation variants
 
 const Product = () => {

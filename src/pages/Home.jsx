@@ -2,7 +2,7 @@
 import oilStorageImg from "../assets/images/oil-storage.webp";
 import oilExplorationImg from "../assets/images/oil-exploration.webp";
 import oilProductionImg from "../assets/images/oil-production.webp";
-import oilRefiningImg from "../assets/images/oil-refining.webp";
+import oilRefiningImg from "../assets/images/oil-refining.png";
 import oilTerminalImg from "../assets/images/oil-terminal.webp";
 import {
   fadeInAnimationVariants,
