@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showScrollToTopButton, setShowScrollToTopButton] = useState(false);
 
   // Define nav links for reusability and easier management
   const navLinks = [
@@ -13,6 +14,32 @@ function Navbar() {
     { name: "Partnership", path: "#" }, // Original was <a> tag
     { name: "Contact", path: "#" }, // Original was <a> tag
   ];
+
+  // Function to handle scroll event and show/hide the scroll-to-top button
+  const handleScroll = () => {
+    if (window.scrollY > 200) {
+      // Show button after scrolling down 200px
+      setShowScrollToTopButton(true);
+    } else {
+      setShowScrollToTopButton(false);
+    }
+  };
+
+  // Function to scroll to the top of the page smoothly
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  // Add and remove scroll event listener on component mount/unmount
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Empty dependency array ensures this runs once on mount and cleans up on unmount
 
   return (
     <>
@@ -35,7 +62,7 @@ function Navbar() {
 
         {/* Desktop Navigation and Book Now Button (visible on md and up) */}
         <div className="hidden md:flex items-center md:gap-8">
-          <ul className="flex flex-wrap justify-center gap-x-4 gap-y-2 md:gap-8 text-sm md:text-base">
+          <ul className="flex flex-wrap justify-center gap-x-4 gap-y-2 md:gap-5 text-sm md:text-base">
             {navLinks.map((link) => (
               <li key={link.name}>
                 {/* Use Link for internal paths, a for external/hash paths */}
@@ -132,6 +159,30 @@ function Navbar() {
           ))}
         </ul>
       </div>
+
+      {/* Scroll to Top Button */}
+      {showScrollToTopButton && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 right-4 bg-orange-500 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50 z-50"
+          aria-label="Scroll to top"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M5 10l7-7m0 0l7 7m-7-7v18"
+            ></path>
+          </svg>
+        </button>
+      )}
     </>
   );
 }
