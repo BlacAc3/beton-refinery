@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import aboutPetroleum from "../assets/images/about_ref1.jpg";
+import aboutPetroleum from "../assets/images/about_ref1.webp";
 import CarbonBusinessSVG from "../assets/carbon_business-metrics.svg";
 import GroupSVG from "../assets/about_team.svg";
 import FeedbackSVG from "../assets/about_feedback.svg";
@@ -14,7 +14,7 @@ const About = () => {
   return (
     <>
       <section>
-        <div className="p-20 md:p-44 flex justify-center items-center bg-[url('assets/images/city_image.jpg')] bg-cover bg-center bg-no-repeat">
+        <div className="p-20 md:p-44 flex justify-center items-center bg-[url('assets/images/city_image.webp')] bg-cover bg-center bg-no-repeat">
           <h1 className="text-3xl sm:text-5xl text-white font-bold">
             About us
           </h1>
@@ -182,7 +182,7 @@ const About = () => {
           </motion.li>
         </motion.ul>
       </section>
-      <section className="bg-[url('assets/images/clock.jpg')] bg-cover bg-center">
+      <section className="bg-[url('assets/images/clock.webp')] bg-cover bg-center">
         <div className="bg-blue-800/30 py-10 md:py-20">
           <motion.div
             className="mx-auto max-w-4xl flex flex-col items-center justify-center text-white text-center px-4"

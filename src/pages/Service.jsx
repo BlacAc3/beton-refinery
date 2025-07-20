@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import heroBg from "../assets/images/hero-bg.jpg";
-import oilExplorationImg from "../assets/images/oil-exploration.jpg";
+import heroBg from "../assets/images/hero-bg.webp";
+import oilExplorationImg from "../assets/images/oil-exploration.webp";
 import oilRefiningImg from "../assets/images/oil-refining.png";
-import clockImg from "../assets/images/clock.jpg";
 
 import {
   fadeInAnimationVariants,
@@ -20,7 +19,9 @@ const Service = () => {
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="p-20 md:p-44 flex justify-center items-center bg-black/60">
-          <h1 className="text-3xl md:text-5xl text-white font-bold">Services</h1>
+          <h1 className="text-3xl md:text-5xl text-white font-bold">
+            Services
+          </h1>
         </div>
       </section>
 
@@ -137,7 +138,7 @@ const Service = () => {
         </motion.div>
       </section>
 
-      <section className="bg-[url('assets/images/clock.jpg')] bg-cover bg-center">
+      <section className="bg-[url('assets/images/clock.webp')] bg-cover bg-center">
         <div className="bg-blue-800/30 py-20">
           <motion.div
             className="mx-auto max-w-4xl flex flex-col items-center justify-center text-white text-center px-4"

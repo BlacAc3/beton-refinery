@@ -1,9 +1,9 @@
 // import heroBg from "../assets/images/hero-bg.jpg"; // Keeping for completeness if it were used in an <img>, but it's in a Tailwind class.
-import oilStorageImg from "../assets/images/oil-storage.jpg";
-import oilExplorationImg from "../assets/images/oil-exploration.jpg";
-import oilProductionImg from "../assets/images/oil-production.jpg";
-import oilRefiningImg from "../assets/images/oil-refining.png";
-import oilTerminalImg from "../assets/images/oil-terminal.jpg";
+import oilStorageImg from "../assets/images/oil-storage.webp";
+import oilExplorationImg from "../assets/images/oil-exploration.webp";
+import oilProductionImg from "../assets/images/oil-production.webp";
+import oilRefiningImg from "../assets/images/oil-refining.webp";
+import oilTerminalImg from "../assets/images/oil-terminal.webp";
 import {
   fadeInAnimationVariants,
   fadeInFromLeft,
@@ -11,7 +11,7 @@ import {
   heroContentVariants,
   heroItemVariants,
 } from "../animations";
-// import clockImg from "../assets/images/clock.jpg"; // Keeping for completeness if it were used in an <img>, but it's in a Tailwind class.
+// import clockImg from "../assets/images/clock.webp"; // Keeping for completeness if it were used in an <img>, but it's in a Tailwind class.
 import { motion } from "framer-motion";
 import { useRef } from "react"; // Only need useRef if useInView is used directly on elements without `whileInView`
 
@@ -19,7 +19,7 @@ import { useRef } from "react"; // Only need useRef if useInView is used directl
 function Home() {
   return (
     <>
-      <section className="bg-[url('assets/images/hero-bg.jpg')] bg-cover bg-center md:mb-22">
+      <section className="bg-[url('assets/images/hero-bg.webp')] bg-cover bg-center md:mb-22">
         <div className="bg-gradient-to-br from-blue-800/80 via-blue-800/80 via-50% to-green-700/80">
           <motion.div
             className="h-[calc(100vh-50px)] gap-4 md:gap-7  mx-4 md:mx-48 flex flex-col justify-center items-center md:items-start text-white text-center md:text-left"
@@ -341,7 +341,7 @@ function Home() {
           </motion.ul>
         </motion.div>
       </section>
-      <section className="bg-[url('assets/images/clock.jpg')] bg-cover bg-center">
+      <section className="bg-[url('assets/images/clock.webp')] bg-cover bg-center">
         <div className="bg-blue-800/30 py-10 md:py-20">
           <motion.div
             className="mx-auto max-w-4xl flex flex-col items-center justify-center text-white text-center px-4"
