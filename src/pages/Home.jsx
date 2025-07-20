@@ -19,16 +19,10 @@ import { useRef } from "react"; // Only need useRef if useInView is used directl
 function Home() {
   return (
     <>
-      <section
-        style={{
-          backgroundImage: "url('assets/images/hero-bg.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <section className="bg-[url('assets/images/hero-bg.jpg')] bg-cover bg-center md:mb-22">
         <div className="bg-gradient-to-br from-blue-800/80 via-blue-800/80 via-50% to-green-700/80">
           <motion.div
-            className="h-[calc(100vh-50px)] gap-4 md:gap-7 mx-4 md:mx-48 flex flex-col justify-center items-center md:items-start text-white text-center md:text-left"
+            className="h-[calc(100vh-50px)] gap-4 md:gap-7  mx-4 md:mx-48 flex flex-col justify-center items-center md:items-start text-white text-center md:text-left"
             variants={heroContentVariants}
             initial="hidden"
             animate="visible"
@@ -40,7 +34,7 @@ function Home() {
               Beton Refinery
             </motion.h1>
             <motion.p
-              className="text-center md:text-left w-full md:w-2/3 text-sm md:text-base px-4"
+              className="text-center md:text-left w-full md:w-2/3 text-sm md:text-base "
               variants={heroItemVariants}
             >
               At the heart of modern industry, our oil refinery transforms crude
@@ -64,7 +58,7 @@ function Home() {
         </div>
       </section>
       <section>
-        <div className="py-10 px-4 md:py-18 md:px-6 flex flex-col gap-10 md:gap-18 mx-4 md:mx-20 rounded-md font-bold mt-[-80px] md:mt-[-150px] bg-neutral-200 shadow-xl">
+        <div className="py-10 px-4 md:py-18 md:px-6 flex flex-col gap-10 md:gap-18 mx-4 md:mx-20 rounded-md font-bold mt-[-80px] md:mt-[-150px]  bg-neutral-200 shadow-xl ">
           <motion.h1
             className="text-shadow-lime-900 text-2xl md:text-4xl w-full text-center"
             initial={{ opacity: 0, y: 50 }}
@@ -75,11 +69,11 @@ function Home() {
             Our Services
           </motion.h1>
           <motion.ul
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             {[
               {
@@ -152,7 +146,7 @@ function Home() {
           </motion.ul>
         </div>
       </section>
-      <section className="pt-20 pb-10 md:pt-40 md:pb-20 px-4">
+      <section className="pt-20 pb-10 md:pt-40 md:pb-20">
         <motion.h2
           className="text-center text-3xl md:text-4xl font-bold mb-10 md:mb-16"
           initial={{ opacity: 0, y: 50 }}
@@ -227,7 +221,7 @@ function Home() {
           className="grid grid-cols-1 md:grid-cols-4 gap-6 mx-4 md:mx-20"
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={fadeInAnimationVariants} // This section's cards will now glide up using the updated variants
         >
           {[
@@ -236,7 +230,6 @@ function Home() {
               alt: "Quality Assurance in oil refining",
               title: "Quality Assurance",
               desc: "Performance, dependability, and durability were used to gauge the quality. The most crucial factor that sets a firm apart from its rivals is quality.",
-              colSpan: "col-span-1 md:col-span-2",
             },
             {
               img: oilExplorationImg,
@@ -255,7 +248,6 @@ function Home() {
               alt: "Safety protocols in oil production",
               title: "Safety",
               desc: "Implementing rigorous safety protocols and continuous training to ensure the well-being of our workforce and protect the environment.",
-              colSpan: "col-span-1 md:col-span-2",
             },
             {
               img: oilStorageImg,
@@ -274,12 +266,11 @@ function Home() {
               alt: "Safe chemical handling in storage facilities",
               title: "Chemical Handling",
               desc: "Adhering to strict guidelines and best practices for the safe and secure handling, storage, and transportation of all chemicals.",
-              colSpan: "col-span-1 md:col-span-2",
             },
           ].map((item, index) => (
             <motion.div
               key={index}
-              className={`bg-gray-100 p-6 rounded-lg shadow-md h-full flex flex-col ${item.colSpan || ""}`}
+              className={`bg-gray-100 p-6 rounded-lg shadow-md h-full flex flex-col col-span-1 md:col-span-2`}
               custom={index}
               variants={fadeInAnimationVariants}
               whileHover={{
@@ -305,7 +296,7 @@ function Home() {
       </section>
       <section>
         <motion.div
-          className="bg-gradient-to-r from-blue-400 via-blue-800 via-90% to-blue-900 p-6 rounded-lg shadow-md max-w-4xl my-10 md:my-24 py-12 md:py-24 px-4 md:px-14 flex flex-col items-center gap-8 md:gap-18 mx-4 md:mx-auto text-white"
+          className="bg-gradient-to-r from-blue-400 via-blue-800 via-90% to-blue-900 p-6 rounded-lg shadow-md md:max-w-4xl my-10 md:my-24 py-12 md:py-24 px-4 md:px-14 flex flex-col items-center gap-8 md:gap-18 mx-4 md:mx-auto text-white"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -322,7 +313,7 @@ function Home() {
             “.
           </motion.h1>
           <motion.ul
-            className="list-disc flex flex-col md:flex-row gap-4 md:gap-8 text-base md:text-xl text-left"
+            className="list-disc flex flex-col w-full px-12 items-start md:items-center md:flex-row gap-4 md:gap-8 text-base md:text-xl text-left"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
