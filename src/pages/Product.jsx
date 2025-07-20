@@ -9,8 +9,10 @@ const Product = () => {
         className="bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${productHero})` }}
       >
-        <div className="p-44 flex justify-center items-center bg-black/50">
-          <h1 className="text-5xl text-white font-bold">Product</h1>
+        <div className="p-20 md:p-44 flex justify-center items-center bg-black/50">
+          <h1 className="text-3xl md:text-5xl text-white font-bold\">
+            Product
+          </h1>
         </div>
       </section>
 

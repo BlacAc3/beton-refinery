@@ -14,12 +14,14 @@ const About = () => {
   return (
     <>
       <section>
-        <div className="p-44 flex justify-center items-center bg-[url('assets/images/city_image.jpg')] bg-cover bg-center bg-no-repeat">
-          <h1 className="text-5xl text-white font-bold">About us</h1>
+        <div className="p-20 md:p-44 flex justify-center items-center bg-[url('assets/images/city_image.jpg')] bg-cover bg-center bg-no-repeat">
+          <h1 className="text-3xl sm:text-5xl text-white font-bold">
+            About us
+          </h1>
         </div>
       </section>
       <section className="flex flex-col justify-center items-center ">
-        <div className="max-w-3xl py-24">
+        <div className="max-w-3xl py-10 md:py-24 px-4">
           <p className="mx-auto text-center text-blue-600 leading-loose">
             Beton Refinery is among the leading Kazakhstan oil and energy
             companies in playing a key role in the linking of the Kazakhstan
@@ -45,7 +47,7 @@ const About = () => {
             boxShadow: "0px 0px 15px rgba(0,0,0,0.3)",
           }}
         >
-          <div className="bg-blue-900  hover:bg-blue-950 px-18 py-2 text-lg font-semibold">
+          <div className="bg-blue-900  hover:bg-blue-950 px-6 py-2 text-lg font-semibold">
             Contact Us
           </div>
           <div>
@@ -55,9 +57,9 @@ const About = () => {
           </div>
         </motion.a>
       </section>
-      <section className="flex flex-col text-blue-900 md:flex-row items-center gap-4 m-20 justify-center py-20 px-4">
+      <section className="flex flex-col text-blue-900 md:flex-row items-center gap-4 my-10 mx-4 md:m-20 justify-center py-10 md:py-20 px-4">
         <motion.div
-          className="w-3/5 p-4 flex justify-center"
+          className="w-full md:w-3/5 p-4 flex justify-center"
           variants={heroItemVariants}
           initial="hidden"
           whileInView="visible"
@@ -70,13 +72,13 @@ const About = () => {
           />
         </motion.div>
         <motion.div
-          className="md:w-1/2 lg:w-3/5 p-4 text-left flex flex-col justify-between"
+          className="w-full md:w-1/2 lg:w-3/5 p-4 text-left flex flex-col justify-between"
           variants={fadeInFromRight}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
         >
-          <p className="text-lg  mb-4 leading-loose">
+          <p className="text-base md:text-lg mb-4 leading-loose">
             The production of petroleum products that comply with regulatory
             documents, the development of the production of jet fuel of the Jet
             A-1 brand and winter diesel fuel are the current top priorities for
@@ -118,9 +120,9 @@ const About = () => {
           </ul>
         </motion.div>
       </section>
-      <section className="py-20 px-10">
+      <section className="py-10 px-4 md:py-20 md:px-10">
         <motion.ul
-          className="flex justify-around text-[#19456b]"
+          className="flex flex-col md:flex-row justify-around text-[#19456b] gap-y-10"
           // Removed initial, whileInView, and transition from UL.
           // Each LI will trigger its own fadeInAnimationVariants with custom stagger.
         >
@@ -181,7 +183,7 @@ const About = () => {
         </motion.ul>
       </section>
       <section className="bg-[url('assets/images/clock.jpg')] bg-cover bg-center">
-        <div className="bg-blue-800/30 py-20">
+        <div className="bg-blue-800/30 py-10 md:py-20">
           <motion.div
             className="mx-auto max-w-4xl flex flex-col items-center justify-center text-white text-center px-4"
             initial="hidden"
@@ -190,7 +192,7 @@ const About = () => {
             variants={heroContentVariants}
           >
             <motion.p
-              className="text-lg md:text-3xl mb-10 leading-relaxed"
+              className="text-base md:text-3xl mb-10 leading-relaxed"
               variants={heroItemVariants}
             >
               “ We help hardware start-ups integrate technology, scale and

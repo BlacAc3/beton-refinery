@@ -19,15 +19,15 @@ const Service = () => {
         className="bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
-        <div className="p-44 flex justify-center items-center bg-black/60">
-          <h1 className="text-5xl text-white font-bold">Services</h1>
+        <div className="p-20 md:p-44 flex justify-center items-center bg-black/60">
+          <h1 className="text-3xl md:text-5xl text-white font-bold">Services</h1>
         </div>
       </section>
 
       <section className="flex flex-col justify-center items-center py-20 px-4 ">
         <div className="max-w-6xl text-blue-900 p-16 bg-white p- mt-[-150px] rounded-xl">
           <motion.h2
-            className="text-3xl font-bold mb-8"
+            className="text-2xl md:text-3xl font-bold mb-8 text-center md:text-left"
             variants={heroItemVariants}
             initial="hidden"
             whileInView="visible"

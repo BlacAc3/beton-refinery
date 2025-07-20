@@ -19,21 +19,30 @@ import { useRef } from "react"; // Only need useRef if useInView is used directl
 function Home() {
   return (
     <>
-      <section className="bg-[url('assets/images/hero-bg.jpg')] bg-cover bg-center">
+      <section
+        style={{
+          backgroundImage: "url('assets/images/hero-bg.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="bg-gradient-to-br from-blue-800/80 via-blue-800/80 via-50% to-green-700/80">
           <motion.div
-            className="h-[calc(100vh-50px)] gap-7 mx-48 flex flex-col justify-center items-start text-white"
+            className="h-[calc(100vh-50px)] gap-4 md:gap-7 mx-4 md:mx-48 flex flex-col justify-center items-center md:items-start text-white text-center md:text-left"
             variants={heroContentVariants}
             initial="hidden"
             animate="visible"
           >
             <motion.h1
-              className="text-4xl font-bold"
+              className="text-3xl md:text-4xl font-bold"
               variants={heroItemVariants}
             >
               Beton Refinery
             </motion.h1>
-            <motion.p className="text-left w-2/3" variants={heroItemVariants}>
+            <motion.p
+              className="text-center md:text-left w-full md:w-2/3 text-sm md:text-base px-4"
+              variants={heroItemVariants}
+            >
               At the heart of modern industry, our oil refinery transforms crude
               oil into high-quality petroleum products. We fuel transportation,
               power industries, and enhance everyday life, all while
@@ -42,7 +51,7 @@ function Home() {
               sustainable energy supply for communities worldwide.
             </motion.p>
             <motion.div
-              className="py-2 px-4 w-1/3 bg-blue-800 text-center border border-indigo-300"
+              className="py-2 px-4 w-fit bg-blue-800 text-center border border-indigo-300 text-sm md:text-base cursor-pointer"
               variants={heroItemVariants}
               whileHover={{
                 scale: 1.05,
@@ -55,9 +64,9 @@ function Home() {
         </div>
       </section>
       <section>
-        <div className="py-18 px-6 flex flex-col gap-18 mx-20 rounded-md font-bold mt-[-150px] bg-neutral-200 shadow-xl">
+        <div className="py-10 px-4 md:py-18 md:px-6 flex flex-col gap-10 md:gap-18 mx-4 md:mx-20 rounded-md font-bold mt-[-80px] md:mt-[-150px] bg-neutral-200 shadow-xl">
           <motion.h1
-            className="text-shadow-lime-900 text-4xl w-full text-center"
+            className="text-shadow-lime-900 text-2xl md:text-4xl w-full text-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
@@ -66,7 +75,7 @@ function Home() {
             Our Services
           </motion.h1>
           <motion.ul
-            className="grid grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"
@@ -123,13 +132,15 @@ function Home() {
                     className="w-full h-48 object-cover rounded-md"
                   />
 
-                  <h3 className="text-2xl font-bold text-blue-800 mt-4">
+                  <h3 className="text-xl md:text-2xl font-bold text-blue-800 mt-4">
                     {service.title}
                   </h3>
-                  <p className="text-gray-500 mt-2 text-sm">{service.desc}</p>
+                  <p className="text-gray-500 mt-2 text-sm md:text-base">
+                    {service.desc}
+                  </p>
                   <motion.a
                     href="#"
-                    className="mt-4 text-orange-500 flex items-center"
+                    className="mt-4 text-orange-500 flex items-center text-sm md:text-base"
                     whileHover={{ x: 5, color: "#FF8C00" }} // Darker orange on hover
                     transition={{ duration: 0.2 }}
                   >
@@ -141,9 +152,9 @@ function Home() {
           </motion.ul>
         </div>
       </section>
-      <section className="pt-40 pb-20">
+      <section className="pt-20 pb-10 md:pt-40 md:pb-20 px-4">
         <motion.h2
-          className="text-center text-4xl font-bold mb-16"
+          className="text-center text-3xl md:text-4xl font-bold mb-10 md:mb-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -151,28 +162,30 @@ function Home() {
         >
           Why Choose Us
         </motion.h2>
-        <div className="bg-blue-600 rounded-3xl mx-24 px-8 py-16 flex justify-center items-center gap-8">
+        <div className="bg-blue-600 rounded-3xl mx-4 md:mx-24 p-8 md:p-16 flex flex-col md:flex-row justify-center items-center gap-8">
           <motion.div
-            className="flex-1 text-white pr-4"
+            className="flex-1 text-white pr-0 md:pr-4 text-center md:text-left"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             variants={fadeInFromLeft}
           >
-            <h3 className="text-2xl font-bold mb-6">You need Us</h3>
-            <p className="mb-4">
+            <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">
+              You need Us
+            </h3>
+            <p className="mb-3 md:mb-4 text-sm md:text-base leading-relaxed">
               Beton Refinery is one of the largest petrochemical companies and a
               global leader in hydrocarbon reserves and liquid hydrocarbon
               production.
             </p>
-            <p className="mb-8">
+            <p className="mb-6 md:mb-8 text-sm md:text-base leading-relaxed">
               A variety of oil products are produced at Beton Refinery. Among
               them are several kinds of motor gasoline, diesel fuel, oil fuel
               (mazout), liquefied hydrocarbon gases, vacuum gas oil, technical
               sulfur,
             </p>
             <motion.button
-              className="px-6 py-2 bg-white text-blue-600 rounded-lg font-semibold shadow-lg"
+              className="px-4 py-2 bg-white text-blue-600 rounded-lg font-semibold shadow-lg text-sm md:text-base"
               whileHover={{ scale: 1.05, backgroundColor: "#E0E0E0" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -181,7 +194,7 @@ function Home() {
             </motion.button>
           </motion.div>
           <motion.div
-            className="flex-1 grid grid-cols-2 gap-4"
+            className="flex-1 grid grid-cols-2 gap-4 w-full md:w-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
@@ -202,16 +215,16 @@ function Home() {
                 <img
                   src={src}
                   alt={`Image ${index + 1}`}
-                  className="w-full h-48 object-cover rounded-xl"
+                  className="w-full h-32 md:h-48 object-cover rounded-xl"
                 />
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
-      <section className="pt-20 pb-20">
+      <section className="pt-10 pb-10 md:pt-20 md:pb-20 px-4">
         <motion.div
-          className="grid grid-cols-4 gap-6 mx-20"
+          className="grid grid-cols-1 md:grid-cols-4 gap-6 mx-4 md:mx-20"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, amount: 0.2 }}
@@ -223,7 +236,7 @@ function Home() {
               alt: "Quality Assurance in oil refining",
               title: "Quality Assurance",
               desc: "Performance, dependability, and durability were used to gauge the quality. The most crucial factor that sets a firm apart from its rivals is quality.",
-              colSpan: "col-span-2",
+              colSpan: "col-span-1 md:col-span-2",
             },
             {
               img: oilExplorationImg,
@@ -242,7 +255,7 @@ function Home() {
               alt: "Safety protocols in oil production",
               title: "Safety",
               desc: "Implementing rigorous safety protocols and continuous training to ensure the well-being of our workforce and protect the environment.",
-              colSpan: "col-span-2",
+              colSpan: "col-span-1 md:col-span-2",
             },
             {
               img: oilStorageImg,
@@ -261,7 +274,7 @@ function Home() {
               alt: "Safe chemical handling in storage facilities",
               title: "Chemical Handling",
               desc: "Adhering to strict guidelines and best practices for the safe and secure handling, storage, and transportation of all chemicals.",
-              colSpan: "col-span-2",
+              colSpan: "col-span-1 md:col-span-2",
             },
           ].map((item, index) => (
             <motion.div
@@ -278,26 +291,28 @@ function Home() {
               <img
                 src={item.img}
                 alt={item.alt}
-                className="w-full h-48 object-cover rounded-md mb-4"
+                className="w-full h-40 md:h-48 object-cover rounded-md mb-4"
               />
-              <h3 className="text-2xl font-bold text-blue-800 mt-4">
+              <h3 className="text-xl md:text-2xl font-bold text-blue-800 mt-4">
                 {item.title}
               </h3>
-              <p className="text-gray-500 mt-2 text-sm">{item.desc}</p>
+              <p className="text-gray-500 mt-2 text-sm md:text-base">
+                {item.desc}
+              </p>
             </motion.div>
           ))}
         </motion.div>
       </section>
       <section>
         <motion.div
-          className="bg-gradient-to-r from-blue-400 via-blue-800 via-90% to-blue-900 p-6 rounded-lg shadow-md max-w-4xl my-24 py-24 px-14 flex flex-col items-center gap-18 mx-auto text-white"
+          className="bg-gradient-to-r from-blue-400 via-blue-800 via-90% to-blue-900 p-6 rounded-lg shadow-md max-w-4xl my-10 md:my-24 py-12 md:py-24 px-4 md:px-14 flex flex-col items-center gap-8 md:gap-18 mx-4 md:mx-auto text-white"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.7, ease: "easeOut" }} // Added ease for smoother animation
         >
           <motion.h1
-            className="text-3xl text-gray-300/80 w-3/4 text-center"
+            className="text-xl md:text-3xl text-gray-300/80 w-full md:w-3/4 text-center leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
@@ -307,7 +322,7 @@ function Home() {
             “.
           </motion.h1>
           <motion.ul
-            className="list-disc flex gap-8 text-xl"
+            className="list-disc flex flex-col md:flex-row gap-4 md:gap-8 text-base md:text-xl text-left"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
@@ -336,7 +351,7 @@ function Home() {
         </motion.div>
       </section>
       <section className="bg-[url('assets/images/clock.jpg')] bg-cover bg-center">
-        <div className="bg-blue-800/30 py-20">
+        <div className="bg-blue-800/30 py-10 md:py-20">
           <motion.div
             className="mx-auto max-w-4xl flex flex-col items-center justify-center text-white text-center px-4"
             initial="hidden"
@@ -345,14 +360,14 @@ function Home() {
             variants={heroContentVariants} // Reusing for consistency
           >
             <motion.p
-              className="text-lg md:text-3xl mb-10 leading-relaxed"
+              className="text-base md:text-3xl mb-6 md:mb-10 leading-relaxed"
               variants={heroItemVariants}
             >
               “ We help hardware start-ups integrate technology, scale and
               desirability without compromise ”
             </motion.p>
             <motion.button
-              className="px-6 py-2 bg-white rounded-lg text-black font-semibold shadow-xl"
+              className="px-4 py-2 bg-white rounded-lg text-black font-semibold shadow-xl text-sm md:text-base"
               variants={heroItemVariants}
               whileHover={{ scale: 1.05, backgroundColor: "#E0E0E0" }}
               whileTap={{ scale: 0.95 }}
