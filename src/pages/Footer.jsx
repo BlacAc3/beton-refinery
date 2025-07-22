@@ -37,18 +37,6 @@ const Footer = () => {
                 production.
               </p>
             </div>
-
-            <div class="md:w-1/2 flex justify-start md:justify-end mt-6 md:mt-0">
-              <ul class="flex flex-wrap gap-x-4 gap-y-2 md:space-x-10 text-base md:text-lg">
-                {navLinks.map((link) => (
-                  <li key={link.name}>
-                    <a href={link.href} class="hover:text-blue-200">
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
 
           <div class="pt-6 md:pt-8 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-blue-100 text-sm">

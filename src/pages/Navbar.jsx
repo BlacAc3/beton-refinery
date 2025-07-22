@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showScrollToTopButton, setShowScrollToTopButton] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false); // New state for scroll effect
+  const location = useLocation(); // Get the current location object from react-router-dom
 
   // Define nav links for reusability and easier management
   const navLinks = [
@@ -39,6 +40,21 @@ function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []); // Empty dependency array ensures this runs once on mount and cleans up on unmount
+
+  // Effect to scroll to top on route change and close mobile menu
+  useEffect(() => {
+    // Close mobile menu if open when navigating
+    if (isOpen) {
+      setIsOpen(false);
+    }
+    // Scroll to the top of the page instantly on route change
+    // This helps prevent scroll-triggered animations from misbehaving due to a "smooth" scroll
+    // or if they are sensitive to initial scroll position on page load.
+    window.scrollTo({
+      top: 0,
+      behavior: "instant", // Use 'instant' for immediate navigation to top
+    });
+  }, [location.pathname]); // Added isOpen to dependency array to resolve linter warning
 
   return (
     <>
