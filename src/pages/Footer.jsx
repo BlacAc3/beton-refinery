@@ -1,6 +1,15 @@
 import { motion } from "framer-motion";
 
 const Footer = () => {
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Product", href: "/product" },
+    { name: "Services", href: "/services" },
+    { name: "Partnership", href: "/partnership" },
+    { name: "Contact", href: "/contact" },
+  ];
+
   return (
     <>
       <footer class="bg-gradient-to-r from-blue-900 to-blue-500 text-white py-8 md:py-12">
@@ -31,36 +40,13 @@ const Footer = () => {
 
             <div class="md:w-1/2 flex justify-start md:justify-end mt-6 md:mt-0">
               <ul class="flex flex-wrap gap-x-4 gap-y-2 md:space-x-10 text-base md:text-lg">
-                <li>
-                  <a href="#" class="hover:text-blue-200">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="hover:text-blue-200">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="hover:text-blue-200">
-                    Product
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="hover:text-blue-200">
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="hover:text-blue-200">
-                    Partnership
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="hover:text-blue-200">
-                    Contact
-                  </a>
-                </li>
+                {navLinks.map((link) => (
+                  <li key={link.name}>
+                    <a href={link.href} class="hover:text-blue-200">
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
