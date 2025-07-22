@@ -6,6 +6,8 @@ import About from "./pages/About.jsx";
 import { Routes, Route } from "react-router-dom";
 import Product from "./pages/Product.jsx";
 import Service from "./pages/Service.jsx";
+import Partnership from "./pages/Partnership.jsx";
+import Contact from "./pages/Contact.jsx";
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/product" element={<Product />} />
         <Route path="/services" element={<Service />} />
+        <Route path="/partnership" element={<Partnership />} />
+        <Route path="/contact" element={<Contact />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
       <Footer />

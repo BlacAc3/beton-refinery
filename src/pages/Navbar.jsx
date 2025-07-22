@@ -11,8 +11,8 @@ function Navbar() {
     { name: "About", path: "/about" },
     { name: "Product", path: "/product" },
     { name: "Services", path: "/services" },
-    { name: "Partnership", path: "#" }, // Original was <a> tag
-    { name: "Contact", path: "#" }, // Original was <a> tag
+    { name: "Partnership", path: "/partnership" }, // Original was <a> tag
+    { name: "Contact", path: "/contact" }, // Original was <a> tag
   ];
 
   // Function to handle scroll event and show/hide the scroll-to-top button
