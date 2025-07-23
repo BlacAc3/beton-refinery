@@ -44,7 +44,8 @@ function Home() {
               technology. We're dedicated to providing a reliable and
               sustainable energy supply for communities worldwide.
             </motion.p>
-            <motion.div
+            <motion.a
+              href="/contact"
               className="py-2 px-4 w-fit bg-blue-800 text-center border border-indigo-300 text-sm md:text-base cursor-pointer"
               variants={heroItemVariants}
               whileHover={{
@@ -53,7 +54,7 @@ function Home() {
               }}
             >
               Get Quotes
-            </motion.div>
+            </motion.a>
           </motion.div>
         </div>
       </section>

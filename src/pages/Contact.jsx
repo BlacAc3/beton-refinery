@@ -52,7 +52,7 @@ const Contact = () => {
           </div>
           <div className="flex flex-col gap-2 justify-center text-blue-900 ">
             <p>Address</p>
-            <p className="font-bold">Астана, ул. Сатпаева 1, 355.</p>
+            <p className="font-bold">Астана, ул. А 355</p>
           </div>
         </div>
         <div className="flex gap-4 h-24">
