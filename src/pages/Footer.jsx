@@ -50,7 +50,7 @@ const Footer = () => {
               <h4 class="font-bold text-white mb-1 md:mb-2 text-base md:text-lg">
                 Главный офис
               </h4>
-              <p class="text-xs md:text-sm">Астана, ул. А 355</p>
+              <p class="text-xs md:text-sm">Астана, ул. А</p>
               <p class="text-xs md:text-sm">355</p>
             </div>
             <div>
