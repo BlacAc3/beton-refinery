@@ -179,14 +179,6 @@ function Home() {
               (mazout), liquefied hydrocarbon gases, vacuum gas oil, technical
               sulfur,
             </p>
-            <motion.button
-              className="px-4 py-2 bg-white text-blue-600 rounded-lg font-semibold shadow-lg text-sm md:text-base"
-              whileHover={{ scale: 1.05, backgroundColor: "#E0E0E0" }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              Get Quotes
-            </motion.button>
           </motion.div>
           <motion.div
             className="flex-1 grid grid-cols-2 gap-4 w-full md:w-auto"
